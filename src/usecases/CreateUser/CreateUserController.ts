@@ -3,7 +3,7 @@ import { CreateUserUseCase } from '@modules/usecases/CreateUser/CreateUserUseCas
 
 export class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) {}
-  async handle(request: Request, response: Response): Promise<Response> {
+  public async handle(request: Request, response: Response): Promise<Response> {
     const { name, document, email, password } = request.body;
 
     await this.createUserUseCase.execute({ name, document, email, password });

@@ -1,10 +1,10 @@
-import { IUsersRepository } from '@modules/repositories/IUsersRepository';
+import { IUsersRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/IUsersRepository';
 import { ICreateUserDTO } from './ICreateUserDTO';
 
 export class CreateUserUseCase {
   constructor(private UserRepository: IUsersRepository) {}
 
-  async execute({
+  public async execute({
     name,
     document,
     email,

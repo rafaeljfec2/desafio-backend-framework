@@ -1,12 +1,13 @@
 {
+  "name": "default",
   "type": "postgres",
-  "host": "db",
+  "host": "localhost",
   "port": 5432,
   "username": "postgres",
   "password": "docker",
   "database": "apibank",
   "entities": [
-    "./src/modules/**/infra/orm/entities/*.ts"
+    "./src/infraestructure/repositories/orm/postgres/entities/**/*.ts"
   ],
   "migrations": [
     "./src/shared/infra/typeorm/migrations/*.ts"
