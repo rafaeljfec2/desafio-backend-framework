@@ -1,0 +1,17 @@
+{
+  "type": "postgres",
+  "host": "db",
+  "port": 5432,
+  "username": "postgres",
+  "password": "docker",
+  "database": "apibank",
+  "entities": [
+    "./src/modules/**/infra/orm/entities/*.ts"
+  ],
+  "migrations": [
+    "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
+  "cli":{
+    "migrationsDir":"src/shared/infra/typeorm/migrations"
+  }
+}
