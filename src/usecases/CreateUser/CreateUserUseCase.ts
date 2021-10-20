@@ -9,12 +9,14 @@ export class CreateUserUseCase {
     document,
     email,
     password,
+    type,
   }: ICreateUserDTO): Promise<void> {
     const user = await this.UserRepository.create({
       name,
       document,
       email,
       password,
+      type,
     });
 
     await this.UserRepository.save(user);

@@ -3,4 +3,5 @@ export interface ICreateUserDTO {
   document: string;
   email: string;
   password: string;
+  type: string;
 }

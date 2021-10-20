@@ -31,7 +31,7 @@ export class CreateUser1633892308112 implements MigrationInterface {
           },
           {
             name: 'type',
-            type: 'varchar(50)',
+            type: 'varchar(10)',
           },
           {
             name: 'created_at',

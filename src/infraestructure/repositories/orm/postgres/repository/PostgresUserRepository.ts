@@ -11,12 +11,14 @@ export default class PostgresUserRepository implements IUsersRepository {
     document,
     email,
     password,
+    type,
   }: ICreateUserDTO): Promise<User> {
     this.ormRepository = getRepository(User);
     const user = this.ormRepository.create({
       name,
       document,
       email,
+      type,
       password,
     });
     await this.ormRepository.save(user);
