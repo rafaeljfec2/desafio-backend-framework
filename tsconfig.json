@@ -14,7 +14,7 @@
         "src/config/*"
       ],
       "@modules/*": [
-        "src/modules/*"
+        "src/*"
       ],
       "@shared/*": [
         "src/shared/*"
