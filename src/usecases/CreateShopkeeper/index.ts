@@ -1,4 +1,4 @@
-import PostgresShopkeeperRepository from '@modules/infraestructure/repositories/orm/postgres/repository/PostgresShopkeeperRepository';
+import PostgresShopkeeperRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Shopkeeper/PostgresShopkeeperRepository';
 import { CreateShopkeeperController } from './CreateShopkeeperController';
 import { CreateShopkeeperUseCase } from './CreateShopkeeperUserCase';
 

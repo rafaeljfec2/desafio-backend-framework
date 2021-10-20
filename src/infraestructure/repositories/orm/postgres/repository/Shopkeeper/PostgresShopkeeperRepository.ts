@@ -1,7 +1,7 @@
 import { ICreateShopkeeperDTO } from '@modules/usecases/CreateShopkeeper/ICreateShopkeeperDTO';
 import { getRepository, Repository } from 'typeorm';
-import { IShopkeeperRepository } from '../entities/Shopkeeper/IShopkeeperRepository';
-import Shopkeeper from '../entities/Shopkeeper/Shopkeeper';
+import { IShopkeeperRepository } from '../../entities/Shopkeeper/IShopkeeperRepository';
+import Shopkeeper from '../../entities/Shopkeeper/Shopkeeper';
 
 export default class PostgresShopkeeperRepository
   implements IShopkeeperRepository
@@ -33,11 +33,13 @@ export default class PostgresShopkeeperRepository
     return shopkeeper;
   }
 
-  public async findByCpf(cpf: string): Promise<Shopkeeper | undefined> {
+  public async findByDocument(
+    document: string,
+  ): Promise<Shopkeeper | undefined> {
     this.ormRepository = getRepository(Shopkeeper);
     const shopkeeper = this.ormRepository.findOne({
       where: {
-        cpf,
+        document,
       },
     });
     return shopkeeper;

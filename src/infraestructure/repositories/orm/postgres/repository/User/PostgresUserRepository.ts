@@ -1,7 +1,7 @@
 import { IUsersRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/User/IUsersRepository';
 import { ICreateUserDTO } from '@modules/usecases/CreateUser/ICreateUserDTO';
 import { getRepository, Repository } from 'typeorm';
-import User from '../entities/User/User';
+import User from '../../entities/User/User';
 
 export default class PostgresUserRepository implements IUsersRepository {
   private ormRepository: Repository<User>;
@@ -31,11 +31,11 @@ export default class PostgresUserRepository implements IUsersRepository {
     return user;
   }
 
-  public async findByCpf(cpf: string): Promise<User | undefined> {
+  public async findByDocument(document: string): Promise<User | undefined> {
     this.ormRepository = getRepository(User);
     const user = this.ormRepository.findOne({
       where: {
-        cpf,
+        document,
       },
     });
     return user;

@@ -1,4 +1,4 @@
-import PostgresUserRepository from '@modules/infraestructure/repositories/orm/postgres/repository/PostgresUserRepository';
+import PostgresUserRepository from '@modules/infraestructure/repositories/orm/postgres/repository/User/PostgresUserRepository';
 import { CreateUserController } from './CreateUserController';
 import { CreateUserUseCase } from './CreateUserUseCase';
 
