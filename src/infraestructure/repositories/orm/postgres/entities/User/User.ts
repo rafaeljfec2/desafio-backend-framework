@@ -6,6 +6,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import Movement from '../Movement/Movement';
 
 @Entity('user')
 export default class User implements IUser {
@@ -30,6 +31,6 @@ export default class User implements IUser {
   @CreateDateColumn()
   created_at: Date;
 
-  //@OneToMany(() => Movement, movement => movement.account)
-  //movements: Movement[];
+  @OneToMany(() => Movement, movement => movement.user)
+  movements: Movement[];
 }

@@ -2,12 +2,12 @@ import { IShopkeeper } from '@modules/entities/Shopkeeper/IShopkeeper';
 import { ICreateShopkeeperDTO } from '@modules/usecases/CreateShopkeeper/ICreateShopkeeperDTO';
 import { getRepository, Repository } from 'typeorm';
 import { IShopkeeperRepository } from '../../entities/Shopkeeper/IShopkeeperRepository';
-import Shopkeeper from '../../entities/Shopkeeper/Shopkeeper';
+import User from '../../entities/User/User';
 
 export default class PostgresShopkeeperRepository
   implements IShopkeeperRepository
 {
-  private ormRepository: Repository<Shopkeeper>;
+  private ormRepository: Repository<User>;
 
   public async create({
     name,
@@ -16,7 +16,7 @@ export default class PostgresShopkeeperRepository
     password,
     type,
   }: ICreateShopkeeperDTO): Promise<IShopkeeper> {
-    this.ormRepository = getRepository(Shopkeeper);
+    this.ormRepository = getRepository(User);
     const shopkeeper = this.ormRepository.create({
       name,
       document,
@@ -28,16 +28,16 @@ export default class PostgresShopkeeperRepository
     return shopkeeper;
   }
 
-  public async save(shopkeeper: Shopkeeper): Promise<IShopkeeper> {
-    this.ormRepository = getRepository(Shopkeeper);
+  public async save(shopkeeper: IShopkeeper): Promise<IShopkeeper> {
+    this.ormRepository = getRepository(User);
     await this.ormRepository.save(shopkeeper);
     return shopkeeper;
   }
 
   public async findByDocument(
     document: string,
-  ): Promise<Shopkeeper | undefined> {
-    this.ormRepository = getRepository(Shopkeeper);
+  ): Promise<IShopkeeper | undefined> {
+    this.ormRepository = getRepository(User);
     const shopkeeper = this.ormRepository.findOne({
       where: {
         document,
@@ -47,7 +47,7 @@ export default class PostgresShopkeeperRepository
   }
 
   public async findByEmail(email: string): Promise<IShopkeeper | undefined> {
-    this.ormRepository = getRepository(Shopkeeper);
+    this.ormRepository = getRepository(User);
     const shopkeeper = this.ormRepository.findOne({
       where: {
         email,
@@ -58,7 +58,7 @@ export default class PostgresShopkeeperRepository
   }
 
   public async findById(id: number): Promise<IShopkeeper | undefined> {
-    this.ormRepository = getRepository(Shopkeeper);
+    this.ormRepository = getRepository(User);
     const shopkeeper = this.ormRepository.findOne({
       where: {
         id,

@@ -1,4 +1,6 @@
-export interface IShopkeeper {
+import { IUser } from '../User/IUser';
+
+export interface IShopkeeper extends IUser {
   id: number;
   name: string;
   document: string;
