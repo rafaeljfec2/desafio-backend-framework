@@ -1,3 +1,4 @@
+import { IUser } from '@modules/entities/User/IUser';
 import { IUsersRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/User/IUsersRepository';
 import { ICreateUserDTO } from '@modules/usecases/CreateUser/ICreateUserDTO';
 import { getRepository, Repository } from 'typeorm';
@@ -25,13 +26,13 @@ export default class PostgresUserRepository implements IUsersRepository {
     return user;
   }
 
-  public async save(user: User): Promise<User> {
+  public async save(user: User): Promise<IUser> {
     this.ormRepository = getRepository(User);
     await this.ormRepository.save(user);
     return user;
   }
 
-  public async findByDocument(document: string): Promise<User | undefined> {
+  public async findByDocument(document: string): Promise<IUser | undefined> {
     this.ormRepository = getRepository(User);
     const user = this.ormRepository.findOne({
       where: {
@@ -41,7 +42,17 @@ export default class PostgresUserRepository implements IUsersRepository {
     return user;
   }
 
-  public async findById(id: number): Promise<User | undefined> {
+  public async findByEmail(email: string): Promise<IUser | undefined> {
+    this.ormRepository = getRepository(User);
+    const user = this.ormRepository.findOne({
+      where: {
+        email,
+      },
+    });
+    return user;
+  }
+
+  public async findById(id: number): Promise<IUser | undefined> {
     this.ormRepository = getRepository(User);
     const user = this.ormRepository.findOne({
       where: {

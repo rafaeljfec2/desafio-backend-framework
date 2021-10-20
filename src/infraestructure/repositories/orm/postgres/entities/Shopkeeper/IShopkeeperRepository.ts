@@ -3,6 +3,7 @@ import { ICreateShopkeeperDTO } from '@modules/usecases/CreateShopkeeper/ICreate
 
 export interface IShopkeeperRepository {
   findByDocument(document: string): Promise<IShopkeeper | undefined>;
+  findByEmail(email: string): Promise<IShopkeeper | undefined>;
   findById(id: number): Promise<IShopkeeper | undefined>;
   create(data: ICreateShopkeeperDTO): Promise<IShopkeeper>;
   save(account: IShopkeeper): Promise<IShopkeeper>;
