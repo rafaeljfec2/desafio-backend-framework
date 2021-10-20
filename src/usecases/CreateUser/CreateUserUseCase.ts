@@ -1,8 +1,8 @@
-import { IUsersRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/IUsersRepository';
+import { IUsersRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/User/IUsersRepository';
 import { ICreateUserDTO } from './ICreateUserDTO';
 
 export class CreateUserUseCase {
-  constructor(private UserRepository: IUsersRepository) {}
+  constructor(private userRepository: IUsersRepository) {}
 
   public async execute({
     name,
@@ -11,7 +11,7 @@ export class CreateUserUseCase {
     password,
     type,
   }: ICreateUserDTO): Promise<void> {
-    const user = await this.UserRepository.create({
+    const user = await this.userRepository.create({
       name,
       document,
       email,
@@ -19,6 +19,6 @@ export class CreateUserUseCase {
       type,
     });
 
-    await this.UserRepository.save(user);
+    await this.userRepository.save(user);
   }
 }
