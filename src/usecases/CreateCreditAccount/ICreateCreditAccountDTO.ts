@@ -1,6 +1,6 @@
-import { IUser } from '@modules/entities/User/IUser';
+import { IAccount } from '@modules/entities/Account/IAccount';
 
 export interface ICreateCreditAccountDTO {
-  user: IUser;
+  account: IAccount;
   value: number;
 }

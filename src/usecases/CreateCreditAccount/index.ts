@@ -1,5 +1,5 @@
 import PostgresMovementRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Movement/PostgresMovementRepository';
-import PostgresUserRepository from '@modules/infraestructure/repositories/orm/postgres/repository/User/PostgresUserRepository';
+import PostgresUserRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
 import CreateCreditAccountController from './CreateCreditAccountController';
 import CreateCreditAccountUseCase from './CreateCreditAccountUseCase';
 

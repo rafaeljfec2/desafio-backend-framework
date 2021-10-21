@@ -7,10 +7,13 @@ import Movement from '../../entities/Movement/Movement';
 export default class PostgresMovementRepository implements IMovementRepository {
   private ormRepository: Repository<Movement>;
 
-  async create({ user, value }: ICreateCreditAccountDTO): Promise<IMovement> {
+  async create({
+    account,
+    value,
+  }: ICreateCreditAccountDTO): Promise<IMovement> {
     this.ormRepository = getRepository(Movement);
     const movement = this.ormRepository.create({
-      user,
+      account,
       value,
     });
 

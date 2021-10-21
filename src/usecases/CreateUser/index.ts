@@ -1,9 +1,9 @@
-import PostgresUserRepository from '@modules/infraestructure/repositories/orm/postgres/repository/User/PostgresUserRepository';
+import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
 import { CreateUserController } from './CreateUserController';
 import { CreateUserUseCase } from './CreateUserUseCase';
 
-const postgresUserRepository = new PostgresUserRepository();
-const createUserUseCase = new CreateUserUseCase(postgresUserRepository);
+const postgresAccountRepository = new PostgresAccountRepository();
+const createUserUseCase = new CreateUserUseCase(postgresAccountRepository);
 const createUserController = new CreateUserController(createUserUseCase);
 
 export { createUserUseCase, createUserController };

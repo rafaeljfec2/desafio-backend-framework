@@ -19,7 +19,7 @@ export class CreateMovement1634763880310 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'userId',
+            name: 'accountId',
             type: 'integer',
           },
           {
@@ -38,9 +38,9 @@ export class CreateMovement1634763880310 implements MigrationInterface {
     await queryRunner.createForeignKey(
       'movement',
       new TableForeignKey({
-        columnNames: ['userId'],
+        columnNames: ['accountId'],
         referencedColumnNames: ['id'],
-        referencedTableName: 'user',
+        referencedTableName: 'account',
         onDelete: 'RESTRICT',
       }),
     );

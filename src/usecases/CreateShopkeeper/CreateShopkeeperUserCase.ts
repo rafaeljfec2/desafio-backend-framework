@@ -1,8 +1,8 @@
-import { IShopkeeperRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Shopkeeper/IShopkeeperRepository';
-import { ICreateShopkeeperDTO } from './ICreateShopkeeperDTO';
+import { IAccountRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/IAccountRepository';
+import { ICreateAccountDTO } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/ICreateAccountDTO';
 
 export class CreateShopkeeperUseCase {
-  constructor(private shopkeeperRepository: IShopkeeperRepository) {}
+  constructor(private accountRepository: IAccountRepository) {}
 
   public async execute({
     name,
@@ -10,8 +10,8 @@ export class CreateShopkeeperUseCase {
     email,
     password,
     type,
-  }: ICreateShopkeeperDTO): Promise<void> {
-    const shopkeeper = await this.shopkeeperRepository.create({
+  }: ICreateAccountDTO): Promise<void> {
+    const shopkeeper = await this.accountRepository.create({
       name,
       document,
       email,
@@ -19,6 +19,6 @@ export class CreateShopkeeperUseCase {
       type,
     });
 
-    await this.shopkeeperRepository.save(shopkeeper);
+    await this.accountRepository.save(shopkeeper);
   }
 }

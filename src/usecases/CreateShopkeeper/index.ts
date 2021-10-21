@@ -1,10 +1,10 @@
-import PostgresShopkeeperRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Shopkeeper/PostgresShopkeeperRepository';
+import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
 import { CreateShopkeeperController } from './CreateShopkeeperController';
 import { CreateShopkeeperUseCase } from './CreateShopkeeperUserCase';
 
-const postgresShopkeeperRepository = new PostgresShopkeeperRepository();
+const postgresAccountRepository = new PostgresAccountRepository();
 const createShopkeeperUseCase = new CreateShopkeeperUseCase(
-  postgresShopkeeperRepository,
+  postgresAccountRepository,
 );
 const createShopkeeperController = new CreateShopkeeperController(
   createShopkeeperUseCase,

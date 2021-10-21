@@ -1,6 +1,6 @@
-import movementRouter from '@modules/infraestructure/http/MovementRoute';
-import shopkeeperRouter from '@modules/infraestructure/http/ShopkeeperRoute';
-import userRouter from '@modules/infraestructure/http/UserRouter';
+import movementRouter from '@modules/infraestructure/http/Routes/Movement/MovementRoute';
+import shopkeeperRouter from '@modules/infraestructure/http/Routes/Shopkeeper/ShopkeeperRoute';
+import userRouter from '@modules/infraestructure/http/Routes/User/UserRouter';
 import { Router } from 'express';
 
 const routes = Router();

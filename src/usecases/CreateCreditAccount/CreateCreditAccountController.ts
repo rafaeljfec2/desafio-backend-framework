@@ -5,8 +5,8 @@ export default class CreateCreditAccountController {
   constructor(private createCreditAccountUseCase: CreateCreditAccountUseCase) {}
 
   public async handle(request: Request, response: Response): Promise<Response> {
-    const { user, value } = request.body;
-    await this.createCreditAccountUseCase.execute({ user, value });
+    const { account, value } = request.body;
+    await this.createCreditAccountUseCase.execute({ account, value });
     return response.status(201).json();
   }
 }

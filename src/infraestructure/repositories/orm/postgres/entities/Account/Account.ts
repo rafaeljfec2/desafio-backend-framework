@@ -1,4 +1,4 @@
-import { IUser } from '@modules/entities/User/IUser';
+import { IAccount } from '@modules/entities/Account/IAccount';
 import {
   Column,
   CreateDateColumn,
@@ -8,8 +8,8 @@ import {
 } from 'typeorm';
 import Movement from '../Movement/Movement';
 
-@Entity('user')
-export default class User implements IUser {
+@Entity('account')
+export default class Account implements IAccount {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -31,6 +31,6 @@ export default class User implements IUser {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => Movement, movement => movement.user)
+  @OneToMany(() => Movement, movement => movement.account)
   movements: Movement[];
 }

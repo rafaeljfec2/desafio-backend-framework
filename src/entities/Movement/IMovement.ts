@@ -1,9 +1,8 @@
-import { IShopkeeper } from '../Shopkeeper/IShopkeeper';
-import { IUser } from '../User/IUser';
+import { IAccount } from '../Account/IAccount';
 
 export interface IMovement {
   id: number;
-  user: IUser | IShopkeeper;
+  account: IAccount;
   value: number;
   created_at: Date;
 }

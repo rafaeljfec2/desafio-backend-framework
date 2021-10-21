@@ -1,28 +1,30 @@
+import { IAccountRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/IAccountRepository';
 import { IMovementRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Movement/IMovementRepository';
-import { IUsersRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/User/IUsersRepository';
 import AppError from '@modules/shared/errors/AppError';
 import { ICreateCreditAccountDTO } from './ICreateCreditAccountDTO';
 
 export default class CreateCreditAccountUseCase {
   constructor(
     private movementRepository: IMovementRepository,
-    private userRepository: IUsersRepository,
+    private accountRepository: IAccountRepository,
   ) {}
 
   public async execute({
-    user,
+    account,
     value,
   }: ICreateCreditAccountDTO): Promise<void> {
-    const userExists = await this.userRepository.findByDocument(user.document);
+    const accountExists = await this.accountRepository.findByDocument(
+      account.document,
+    );
 
-    if (!userExists) {
+    if (!accountExists) {
       throw new AppError('Account for credit does not exist!', 422);
     }
 
-    user = userExists;
+    account = accountExists;
 
     const movement = await this.movementRepository.create({
-      user,
+      account,
       value,
     });
 
