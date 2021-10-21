@@ -15,6 +15,6 @@ export class BalanceAccountUseCase {
 
     const balance = await this.movementRepository.balance(document);
 
-    return balance;
+    return Number(balance);
   }
 }

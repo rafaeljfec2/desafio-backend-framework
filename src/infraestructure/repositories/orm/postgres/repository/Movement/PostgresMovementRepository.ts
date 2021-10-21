@@ -32,7 +32,7 @@ export default class PostgresMovementRepository implements IMovementRepository {
       .createQueryBuilder('movement')
       .select('SUM(movement.value)', 'sum')
       .innerJoin('movement.account', 'account')
-      .where('account.document = :document', { document: document })
+      .where('account.document = :document', { document: String(document) })
       .getRawOne();
 
     return sum;
