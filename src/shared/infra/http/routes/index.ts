@@ -7,6 +7,6 @@ const routes = Router();
 
 routes.use('/users', userRouter);
 routes.use('/shopkeepers', shopkeeperRouter);
-routes.use('/movements-account/credit', movementRouter);
+routes.use('/movements-account', movementRouter);
 
 export default routes;

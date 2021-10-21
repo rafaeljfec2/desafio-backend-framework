@@ -4,4 +4,5 @@ import { ICreateCreditAccountDTO } from '@modules/usecases/CreateCreditAccount/I
 export interface IMovementRepository {
   create(data: ICreateCreditAccountDTO): Promise<IMovement>;
   save(movement: IMovement): Promise<IMovement>;
+  balance(document: string): Promise<number>;
 }

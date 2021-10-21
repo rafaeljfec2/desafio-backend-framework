@@ -7,7 +7,7 @@ import Movement from '../../entities/Movement/Movement';
 export default class PostgresMovementRepository implements IMovementRepository {
   private ormRepository: Repository<Movement>;
 
-  async create({
+  public async create({
     account,
     value,
   }: ICreateCreditAccountDTO): Promise<IMovement> {
@@ -21,9 +21,20 @@ export default class PostgresMovementRepository implements IMovementRepository {
 
     return movement;
   }
-  async save(movement: IMovement): Promise<IMovement> {
+  public async save(movement: IMovement): Promise<IMovement> {
     this.ormRepository = getRepository(Movement);
     await this.ormRepository.save(movement);
     return movement;
+  }
+
+  public async balance(document: string): Promise<number> {
+    const { sum } = await getRepository(Movement)
+      .createQueryBuilder('movement')
+      .select('SUM(movement.value)', 'sum')
+      .innerJoin('movement.account', 'account')
+      .where('account.document = :document', { document: document })
+      .getRawOne();
+
+    return sum;
   }
 }
