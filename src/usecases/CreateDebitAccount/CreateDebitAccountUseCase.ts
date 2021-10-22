@@ -15,7 +15,11 @@ export default class CreateDebitAccountUseCase {
     );
 
     if (!accountExists) {
-      throw new AppError('Account for debit does not exist!', 422);
+      throw new AppError('Account for debit does not exist', 422);
+    }
+
+    if (value === 0) {
+      throw new AppError('This value of debit invalid', 400);
     }
 
     account = accountExists;
