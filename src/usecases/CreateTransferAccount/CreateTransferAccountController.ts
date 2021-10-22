@@ -17,6 +17,6 @@ export class CreateTransferAccountController {
 
     return response
       .status(201)
-      .json({ accountPayee: accountPayee, balanceCurrent: balance });
+      .json({ accountPayee: accountPayer, balanceCurrent: balance });
   }
 }
