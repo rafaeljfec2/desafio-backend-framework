@@ -1,5 +1,5 @@
-import { IAccountRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/IAccountRepository';
-import { IMovementRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Movement/IMovementRepository';
+import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
+import { IMovementRepository } from '@modules/entities/Movement/IMovementRepository';
 import AppError from '@modules/shared/errors/AppError';
 
 export class BalanceAccountUseCase {

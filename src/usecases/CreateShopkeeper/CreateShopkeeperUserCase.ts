@@ -1,5 +1,5 @@
-import { IAccountRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/IAccountRepository';
-import { ICreateAccountDTO } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/ICreateAccountDTO';
+import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
+import { ICreateAccountDTO } from '@modules/entities/Account/ICreateAccountDTO';
 
 export class CreateShopkeeperUseCase {
   constructor(private accountRepository: IAccountRepository) {}

@@ -1,6 +1,6 @@
 import { IAccount } from '@modules/entities/Account/IAccount';
 
-export interface ICreateCreditAccountDTO {
+export interface ICreateMovementDTO {
   account: IAccount;
   value: number;
 }

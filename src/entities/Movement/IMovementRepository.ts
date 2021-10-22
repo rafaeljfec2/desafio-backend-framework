@@ -1,8 +1,8 @@
 import { IMovement } from '@modules/entities/Movement/IMovement';
-import { ICreateCreditAccountDTO } from '@modules/usecases/CreateCreditAccount/ICreateCreditAccountDTO';
+import { ICreateMovementDTO } from './ICreateMovementDTO';
 
 export interface IMovementRepository {
-  create(data: ICreateCreditAccountDTO): Promise<IMovement>;
+  create(data: ICreateMovementDTO): Promise<IMovement>;
   save(movement: IMovement): Promise<IMovement>;
   balance(document: string): Promise<number>;
 }

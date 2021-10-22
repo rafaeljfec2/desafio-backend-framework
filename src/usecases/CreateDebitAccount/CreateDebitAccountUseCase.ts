@@ -1,12 +1,12 @@
 import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
+import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
 import { IMovementRepository } from '@modules/entities/Movement/IMovementRepository';
 import AppError from '@modules/shared/errors/AppError';
-import { ICreateMovementDTO } from '../../entities/Movement/ICreateMovementDTO';
 
-export default class CreateCreditAccountUseCase {
+export default class CreateDebitAccountUseCase {
   constructor(
-    private movementRepository: IMovementRepository,
     private accountRepository: IAccountRepository,
+    private movementRepository: IMovementRepository,
   ) {}
 
   public async execute({ account, value }: ICreateMovementDTO): Promise<void> {
@@ -15,7 +15,7 @@ export default class CreateCreditAccountUseCase {
     );
 
     if (!accountExists) {
-      throw new AppError('Account for credit does not exist!', 422);
+      throw new AppError('Account for debit does not exist!', 422);
     }
 
     account = accountExists;

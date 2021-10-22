@@ -1,5 +1,6 @@
-import { IAccountRepository } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/IAccountRepository';
-import { ICreateAccountDTO } from '@modules/infraestructure/repositories/orm/postgres/entities/Account/ICreateAccountDTO';
+import { IAccount } from '@modules/entities/Account/IAccount';
+import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
+import { ICreateAccountDTO } from '@modules/entities/Account/ICreateAccountDTO';
 
 export class CreateUserUseCase {
   constructor(private accountRepository: IAccountRepository) {}
@@ -10,7 +11,7 @@ export class CreateUserUseCase {
     email,
     password,
     type,
-  }: ICreateAccountDTO): Promise<void> {
+  }: ICreateAccountDTO): Promise<IAccount> {
     const user = await this.accountRepository.create({
       name,
       document,
@@ -20,5 +21,7 @@ export class CreateUserUseCase {
     });
 
     await this.accountRepository.save(user);
+
+    return user;
   }
 }
