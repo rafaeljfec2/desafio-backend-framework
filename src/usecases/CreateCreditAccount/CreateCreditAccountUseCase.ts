@@ -15,7 +15,11 @@ export default class CreateCreditAccountUseCase {
     );
 
     if (!accountExists) {
-      throw new AppError('Account for credit does not exist!', 422);
+      throw new AppError('Account for credit does not exist', 422);
+    }
+
+    if (value <= 0) {
+      throw new AppError('This value of credit invalid', 400);
     }
 
     account = accountExists;
