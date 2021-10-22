@@ -19,6 +19,7 @@ const createTransferAccountUseCase = new CreateTransferAccountUseCase(
     new PostgresAccountRepository(),
     new PostgresMovementRepository(),
   ),
+  new PostgresAccountRepository(),
 );
 
 const createTransferAccountController = new CreateTransferAccountController(
