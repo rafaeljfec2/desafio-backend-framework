@@ -19,6 +19,7 @@ export default class CreateDebitAccountUseCase {
     }
 
     account = accountExists;
+    value = value * -1;
 
     const movement = await this.movementRepository.create({
       account,
