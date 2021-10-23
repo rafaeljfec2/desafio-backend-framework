@@ -7,6 +7,18 @@ import Joi from 'joi';
 
 const movementRouter = Router();
 
+/**
+ * @api {post} /api/v1/movements-account/credit Account Credit
+ * @apiName Credit an amount to the account
+ * @apiGroup Movement
+ *
+ * @apibody {object} [account]
+ * @apibody {string} [account[document]]
+ * @apibody {Number} [value]
+ *
+ * @apiSuccess {object} object object of movement credit
+ */
+
 movementRouter.post(
   '/credit',
   celebrate({
@@ -19,6 +31,21 @@ movementRouter.post(
     return createCreditAccounController.handle(request, response);
   },
 );
+
+/**
+ * @api {post} /api/v1/movements-account/transfer Account Transfer
+ * @apiName Transfer of amounts between accounts
+ * @apiGroup Movement
+ *
+ * @apibody {object} [accountPayer]
+ * @apibody {string} [accountPayer[document]]
+ * @apibody {object} [accountPayee]
+ * @apibody {string} [accountPayee[document]]
+ * @apibody {Number} [value]
+ *
+ * @apiSuccess {String} Account Account origin of debit
+ * @apiSuccess {Number} Balance Remaining balance after transfer
+ */
 
 movementRouter.post(
   '/transfer',
@@ -33,6 +60,17 @@ movementRouter.post(
     return createTransferAccountController.handle(request, response);
   },
 );
+
+/**
+ * @api {get} /api/v1/movements-account/balance/:document Account Balance
+ * @apiName Balance of account
+ * @apiGroup Movement
+ *
+ * @apiparam {string} [document]
+
+ * @apiSuccess {String} Account Account
+ * @apiSuccess {Number} Balance Balance
+ */
 
 movementRouter.get(
   '/balance/:document',

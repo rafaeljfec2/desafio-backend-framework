@@ -5,6 +5,19 @@ import Joi from 'joi';
 
 const shopkeeperRouter = Router();
 
+/**
+ * @api {post} /api/v1/shopkeepers Create Shopkeeper
+ * @apiName Create Shopkeeper
+ * @apiGroup Shopkeeper
+ *
+ * @apibody {object} [shopkeeper]
+ * @apibody {string} [shopkeeper[name]]
+ * @apibody {string} [shopkeeper[document]]
+ * @apibody {string} [shopkeeper[email]]
+ * @apibody {string} [shopkeeper[password]]
+ *
+ */
+
 shopkeeperRouter.post(
   '/',
   celebrate({
