@@ -1,10 +1,14 @@
 import { IAccount } from '@modules/entities/Account/IAccount';
 import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
 import { ICreateAccountDTO } from '@modules/entities/Account/ICreateAccountDTO';
+import { ICrypt } from '@modules/entities/Auth/ICrypt';
 import AppError from '@modules/shared/errors/AppError';
 
 export class CreateShopkeeperUseCase {
-  constructor(private accountRepository: IAccountRepository) {}
+  constructor(
+    private accountRepository: IAccountRepository,
+    private crypt: ICrypt,
+  ) {}
 
   public async execute({
     name,
@@ -26,6 +30,8 @@ export class CreateShopkeeperUseCase {
         422,
       );
     }
+
+    password = await this.crypt.encrypt(password);
 
     const shopkeeper = await this.accountRepository.create({
       name,
