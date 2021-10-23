@@ -26,8 +26,6 @@ export default class MemoryMovementRepository implements IMovementRepository {
     movement.value = value;
     movement.created_at = new Date();
 
-    this.movements.push(movement);
-
     return movement;
   }
   public async save(movement: IMovement): Promise<IMovement> {

@@ -22,7 +22,6 @@ export default class PostgresAccountRepository implements IAccountRepository {
       type,
       password,
     });
-    await this.ormRepository.save(account);
     return account;
   }
 

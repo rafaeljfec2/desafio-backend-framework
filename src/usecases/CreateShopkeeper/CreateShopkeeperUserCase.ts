@@ -35,6 +35,8 @@ export class CreateShopkeeperUseCase {
       type,
     });
 
+    await this.accountRepository.save(shopkeeper);
+
     return shopkeeper;
   }
 }

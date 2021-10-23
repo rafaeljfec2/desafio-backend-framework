@@ -17,8 +17,6 @@ export default class PostgresMovementRepository implements IMovementRepository {
       value,
     });
 
-    await this.ormRepository.save(movement);
-
     return movement;
   }
   public async save(movement: IMovement): Promise<IMovement> {

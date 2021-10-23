@@ -1,4 +1,5 @@
 import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
+import Crypt from '@modules/infraestructure/Auth/Crypt';
 import MemoryAccountRepository from '@modules/infraestructure/repositories/orm/memory/MemoryAccountRepository';
 import MemoryMovementRepository from '@modules/infraestructure/repositories/orm/memory/MemoryMovementRepository';
 import 'reflect-metadata';
@@ -26,7 +27,10 @@ describe('Debit a Account', () => {
       memoryAccountRepository,
       memoryMovementRepository,
     );
-    createUseUserCase = new CreateUserUseCase(memoryAccountRepository);
+    createUseUserCase = new CreateUserUseCase(
+      memoryAccountRepository,
+      new Crypt(),
+    );
     balanceAccountUseCase = new BalanceAccountUseCase(
       memoryAccountRepository,
       memoryMovementRepository,
@@ -43,7 +47,7 @@ describe('Debit a Account', () => {
     });
 
     const createCredit: ICreateMovementDTO = { account: account, value: 1 };
-    const createDedit: ICreateMovementDTO = { account: account, value: -1 };
+    const createDedit: ICreateMovementDTO = { account: account, value: 1 };
 
     await createCreditAccounttUseCase.execute(createCredit);
     await createDebitAccountUseCase.execute(createDedit);

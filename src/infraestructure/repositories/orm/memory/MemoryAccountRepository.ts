@@ -23,8 +23,6 @@ export default class MemoryAccountRepository implements IAccountRepository {
     account.type = type;
     account.created_at = new Date();
 
-    this.accounts.push(account);
-
     return account;
   }
   public async save(account: IAccount): Promise<IAccount> {

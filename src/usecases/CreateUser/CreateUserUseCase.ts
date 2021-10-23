@@ -35,6 +35,8 @@ export class CreateUserUseCase {
       type,
     });
 
+    await this.accountRepository.save(user);
+
     return user;
   }
 }
