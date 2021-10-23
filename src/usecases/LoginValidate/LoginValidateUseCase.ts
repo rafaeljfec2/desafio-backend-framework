@@ -20,7 +20,7 @@ export default class LoginValidateUseCase implements ILoginValidate {
     }
 
     if (!(await this.crypt.compare(password, account.password))) {
-      throw new AppError('Account does not exist', 422);
+      throw new AppError('Password invalid', 422);
     }
 
     return account;
