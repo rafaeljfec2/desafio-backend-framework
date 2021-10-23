@@ -6,15 +6,14 @@ import Joi from 'joi';
 const loginRoute = Router();
 
 /**
- * @api {post} /api/v1/movements-account/credit Account Credit
- * @apiName Credit an amount to the account
- * @apiGroup Movement
+ * @api {post} /api/v1/login Login Account
+ * @apiName Login
+ * @apiGroup Account
  *
- * @apibody {object} [account]
- * @apibody {string} [account[document]]
- * @apibody {Number} [value]
+ * @apibody {string} [email]
+ * @apibody {string} [password]
  *
- * @apiSuccess {object} object object of movement credit
+ * @apiSuccess {object} object Return Token of access
  */
 
 loginRoute.post(

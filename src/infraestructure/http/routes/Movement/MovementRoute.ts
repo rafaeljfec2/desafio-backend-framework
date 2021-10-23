@@ -13,6 +13,8 @@ const movementRouter = Router();
  * @apiName Credit an amount to the account
  * @apiGroup Movement
  *
+ * @apiHeader {String} x-access-token Token received from endpoint login
+ *
  * @apibody {object} [account]
  * @apibody {string} [account[document]]
  * @apibody {Number} [value]
@@ -38,6 +40,8 @@ movementRouter.post(
  * @api {post} /api/v1/movements-account/transfer Account Transfer
  * @apiName Transfer of amounts between accounts
  * @apiGroup Movement
+ *
+ * @apiHeader {String} x-access-token Token received from endpoint login
  *
  * @apibody {object} [accountPayer]
  * @apibody {string} [accountPayer[document]]
@@ -68,6 +72,8 @@ movementRouter.post(
  * @api {get} /api/v1/movements-account/balance/:document Account Balance
  * @apiName Balance of account
  * @apiGroup Movement
+ *
+ * @apiHeader {String} x-access-token Token received from endpoint login
  *
  * @apiparam {string} [document]
 
