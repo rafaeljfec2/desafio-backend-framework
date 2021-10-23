@@ -15,7 +15,11 @@ export default class LoginValidateUseCase implements ILoginValidate {
       email,
     )) as IAccount;
 
-    if (account && (await this.crypt.compare(password, account.password))) {
+    if (!account) {
+      throw new AppError('Account does not exist', 422);
+    }
+
+    if (!(await this.crypt.compare(password, account.password))) {
       throw new AppError('Account does not exist', 422);
     }
 

@@ -8,7 +8,7 @@ export default class Crypt implements ICrypt {
     return hash;
   }
   public async compare(data: any, encrypted: string): Promise<boolean> {
-    if (bcrypt.compareSync(data, encrypted)) {
+    if (await bcrypt.compare(data, encrypted)) {
       return true;
     }
 
