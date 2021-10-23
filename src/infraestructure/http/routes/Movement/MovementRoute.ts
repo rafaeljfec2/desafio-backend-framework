@@ -1,3 +1,4 @@
+import { authToken } from '@modules/usecases/AuthToken';
 import { balanceAccountController } from '@modules/usecases/BalanceAccount';
 import { createCreditAccounController } from '@modules/usecases/CreateCreditAccount';
 import { createTransferAccountController } from '@modules/usecases/CreateTransferAccount';
@@ -21,6 +22,7 @@ const movementRouter = Router();
 
 movementRouter.post(
   '/credit',
+  authToken.verifyToken,
   celebrate({
     [Segments.BODY]: {
       account: Joi.object().required(),
@@ -49,6 +51,7 @@ movementRouter.post(
 
 movementRouter.post(
   '/transfer',
+  authToken.verifyToken,
   celebrate({
     [Segments.BODY]: {
       accountPayer: Joi.object().required(),
@@ -74,6 +77,7 @@ movementRouter.post(
 
 movementRouter.get(
   '/balance/:document',
+  authToken.verifyToken,
   celebrate({
     [Segments.PARAMS]: {
       document: Joi.string().required(),

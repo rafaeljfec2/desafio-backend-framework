@@ -1,4 +1,4 @@
-import Crypt from '@modules/infraestructure/Auth/Crypt';
+import Crypt from '@modules/infraestructure/auth/Crypt';
 import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
 import { CreateUserController } from './CreateUserController';
 import { CreateUserUseCase } from './CreateUserUseCase';

@@ -1,7 +1,7 @@
-import loginRoute from '@modules/infraestructure/http/Routes/Login/LoginRoute';
-import movementRouter from '@modules/infraestructure/http/Routes/Movement/MovementRoute';
-import shopkeeperRouter from '@modules/infraestructure/http/Routes/Shopkeeper/ShopkeeperRoute';
-import userRouter from '@modules/infraestructure/http/Routes/User/UserRouter';
+import loginRoute from '@modules/infraestructure/http/routes/Login/LoginRoute';
+import movementRouter from '@modules/infraestructure/http/routes/Movement/MovementRoute';
+import shopkeeperRouter from '@modules/infraestructure/http/routes/Shopkeeper/ShopkeeperRoute';
+import userRouter from '@modules/infraestructure/http/routes/User/UserRouter';
 import { Router } from 'express';
 
 const routes = Router();

@@ -1,5 +1,5 @@
 import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
-import Crypt from '@modules/infraestructure/Auth/Crypt';
+import Crypt from '@modules/infraestructure/auth/Crypt';
 import MemoryAccountRepository from '@modules/infraestructure/repositories/orm/memory/MemoryAccountRepository';
 import MemoryMovementRepository from '@modules/infraestructure/repositories/orm/memory/MemoryMovementRepository';
 import 'reflect-metadata';
