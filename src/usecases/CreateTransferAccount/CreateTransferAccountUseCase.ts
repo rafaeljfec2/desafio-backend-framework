@@ -6,6 +6,7 @@ import CreateCreditAccountUseCase from '../CreateCreditAccount/CreateCreditAccou
 import CreateDebitAccountUseCase from '../CreateDebitAccount/CreateDebitAccountUseCase';
 import { ICreateTranferDTO } from './ICreateTranferDTO';
 import { UserType } from '@modules/shared/enum/UserType';
+import Https from 'https';
 
 export class CreateTransferAccountUseCase {
   constructor(
@@ -14,6 +15,21 @@ export class CreateTransferAccountUseCase {
     private balanceAccountUseCase: BalanceAccountUseCase,
     private accountRepository: PostgresAccountRepository,
   ) {}
+
+  private async authorizer(url: string): Promise<string> {
+    return new Promise(resolve => {
+      Https.get(url, res => {
+        let data = '';
+        res.on('data', chunk => {
+          data += chunk;
+        });
+
+        res.on('end', () => {
+          resolve(data);
+        });
+      });
+    });
+  }
 
   public async execute({
     accountPayer,
@@ -43,6 +59,16 @@ export class CreateTransferAccountUseCase {
 
     if (balanceAccount < 0) {
       throw new AppError('Insufficient balance for transfer', 400);
+    }
+
+    const reponse = JSON.parse(
+      await this.authorizer(
+        'https://run.mocky.io/v3/1f1b822a-3d6f-4b95-9a01-b3e6191e436b',
+      ),
+    );
+
+    if (reponse.status !== 'Autorizado') {
+      throw new AppError('Unauthorized transaction', 404);
     }
 
     await this.createCreditAccountUseCase.execute(accountCredit);
