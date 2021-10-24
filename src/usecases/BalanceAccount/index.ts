@@ -13,4 +13,4 @@ const balanceAccountController = new BalanceAccountController(
   balanceAccountUseCase,
 );
 
-export { balanceAccountUseCase, balanceAccountController };
+export { balanceAccountController };

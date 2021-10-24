@@ -1,19 +1,21 @@
-import app from '@shared/infra/http/app';
 import request from 'supertest';
+import app from '@shared/infra/http/app';
 
 describe('Integration Test', () => {
-  it('Create User', async () => {
-    const response = await request(app)
-      .post('/api/v1/users')
-      .send({
-        user: {
-          name: 'rafael',
-          email: 'rafael@gmail.com',
-          password: '123',
-          tyep: 'USER',
-        },
-      });
-    console.log(response.body);
-    expect(response.status).toBe(201);
+  describe('', () => {
+    it('Create User', async () => {
+      const response = await request(app)
+        .post('/api/v1/users')
+        .send({
+          user: {
+            name: 'rafael',
+            email: 'rafael@gmail.com',
+            password: '123',
+            tyep: 'USER',
+          },
+        });
+      console.log(response.body);
+      expect(response.status).toBe(201);
+    });
   });
 });

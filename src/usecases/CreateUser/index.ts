@@ -9,4 +9,4 @@ const createUserUseCase = new CreateUserUseCase(
 );
 const createUserController = new CreateUserController(createUserUseCase);
 
-export { createUserUseCase, createUserController };
+export { createUserController };

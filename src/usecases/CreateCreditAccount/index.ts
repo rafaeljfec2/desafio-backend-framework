@@ -13,4 +13,4 @@ const createCreditAccounController = new CreateCreditAccountController(
   createCreditAccounUseCase,
 );
 
-export { createCreditAccounUseCase, createCreditAccounController };
+export { createCreditAccounController };

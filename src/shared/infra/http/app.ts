@@ -12,7 +12,6 @@ import { errors } from 'celebrate';
 import AppError from '@shared/errors/AppError';
 import '@shared/infra/typeorm';
 import routes from './routes';
-import * as dotenv from 'dotenv';
 import morgan from 'morgan-body';
 import logger from '@infraestructure/middlewares/logger';
 import { createNamespace, Namespace } from 'continuation-local-storage';

@@ -26,4 +26,4 @@ const createTransferAccountController = new CreateTransferAccountController(
   createTransferAccountUseCase,
 );
 
-export { createTransferAccountUseCase, createTransferAccountController };
+export { createTransferAccountController };

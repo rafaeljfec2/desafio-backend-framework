@@ -14,4 +14,4 @@ const loginUseCaseController = new LoginUseCaseController(
   loginValidateUseCase,
 );
 
-export { loginUseCase, loginUseCaseController };
+export { loginUseCaseController };

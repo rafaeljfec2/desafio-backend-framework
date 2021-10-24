@@ -12,4 +12,4 @@ const createShopkeeperController = new CreateShopkeeperController(
   createShopkeeperUseCase,
 );
 
-export { createShopkeeperUseCase, createShopkeeperController };
+export { createShopkeeperController };
