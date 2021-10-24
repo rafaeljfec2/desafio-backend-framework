@@ -38,10 +38,6 @@ $ yarn test
 
 - [Clique aqui para acessar o pgAdmin 4](http://localhost:8000/login?next=%2F)
 
-## Health Check
-
-- [Cliquie aqui para acessar o health check](http://localhost:3333/api/v1/healthcheck)
-
 ## Documentação
 
 - [Clique aqui para acessar a documentação](http://localhost:3333/api-docs)
