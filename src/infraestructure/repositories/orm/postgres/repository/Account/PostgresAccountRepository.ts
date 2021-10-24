@@ -1,8 +1,8 @@
-import { IAccount } from '@modules/entities/Account/IAccount';
-import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
+import { IAccount } from '@entities/Account/IAccount';
+import { IAccountRepository } from '@entities/Account/IAccountRepository';
+import { ICreateAccountDTO } from '@entities/Account/ICreateAccountDTO';
 import { getRepository, Repository } from 'typeorm';
 import Account from '../../entities/Account/Account';
-import { ICreateAccountDTO } from '../../../../../../entities/Account/ICreateAccountDTO';
 
 export default class PostgresAccountRepository implements IAccountRepository {
   private ormRepository: Repository<Account>;

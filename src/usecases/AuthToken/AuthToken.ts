@@ -1,4 +1,4 @@
-import { IAuthToken } from '@modules/entities/Auth/IAuthToken';
+import { IAuthToken } from '@entities/Auth/IAuthToken';
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 

@@ -1,4 +1,4 @@
-import { createShopkeeperController } from '@modules/usecases/CreateShopkeeper';
+import { createShopkeeperController } from '@usecases/CreateShopkeeper';
 import { celebrate, Segments } from 'celebrate';
 import { request, response, Router } from 'express';
 import Joi from 'joi';

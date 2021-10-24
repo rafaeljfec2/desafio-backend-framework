@@ -1,4 +1,4 @@
-import { UserType } from '@modules/shared/enum/UserType';
+import { UserType } from '@shared/enum/UserType';
 import { Request, Response } from 'express';
 import { CreateShopkeeperUseCase } from './CreateShopkeeperUserCase';
 

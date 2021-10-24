@@ -1,4 +1,4 @@
-import { ICrypt } from '@modules/entities/Auth/ICrypt';
+import { ICrypt } from '@entities/Auth/ICrypt';
 import * as bcrypt from 'bcrypt';
 
 export default class Crypt implements ICrypt {

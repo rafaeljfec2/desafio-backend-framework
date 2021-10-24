@@ -1,8 +1,8 @@
-import { IAccount } from '@modules/entities/Account/IAccount';
-import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
-import { ICreateAccountDTO } from '@modules/entities/Account/ICreateAccountDTO';
-import { ICrypt } from '@modules/entities/Auth/ICrypt';
-import AppError from '@modules/shared/errors/AppError';
+import { IAccount } from '@entities/Account/IAccount';
+import { IAccountRepository } from '@entities/Account/IAccountRepository';
+import { ICreateAccountDTO } from '@entities/Account/ICreateAccountDTO';
+import { ICrypt } from '@entities/Auth/ICrypt';
+import AppError from '@shared/errors/AppError';
 
 export class CreateUserUseCase {
   constructor(

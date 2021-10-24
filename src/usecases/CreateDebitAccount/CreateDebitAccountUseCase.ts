@@ -1,7 +1,7 @@
-import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
-import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
-import { IMovementRepository } from '@modules/entities/Movement/IMovementRepository';
-import AppError from '@modules/shared/errors/AppError';
+import { IAccountRepository } from '@entities/Account/IAccountRepository';
+import { ICreateMovementDTO } from '@entities/Movement/ICreateMovementDTO';
+import { IMovementRepository } from '@entities/Movement/IMovementRepository';
+import AppError from '@shared/errors/AppError';
 
 export default class CreateDebitAccountUseCase {
   constructor(

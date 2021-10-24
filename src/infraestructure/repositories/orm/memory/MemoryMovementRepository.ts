@@ -1,6 +1,6 @@
-import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
-import { IMovement } from '@modules/entities/Movement/IMovement';
-import { IMovementRepository } from '@modules/entities/Movement/IMovementRepository';
+import { ICreateMovementDTO } from '@entities/Movement/ICreateMovementDTO';
+import { IMovement } from '@entities/Movement/IMovement';
+import { IMovementRepository } from '@entities/Movement/IMovementRepository';
 import { randomInt } from 'crypto';
 
 export default class MemoryMovementRepository implements IMovementRepository {

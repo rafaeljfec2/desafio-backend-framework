@@ -1,5 +1,5 @@
-import { IAccount } from '@modules/entities/Account/IAccount';
-import { ILogin } from '@modules/entities/Auth/ILogin';
+import { IAccount } from '@entities/Account/IAccount';
+import { ILogin } from '@entities/Auth/ILogin';
 import jwt from 'jsonwebtoken';
 
 export default class LoginUseCase implements ILogin {

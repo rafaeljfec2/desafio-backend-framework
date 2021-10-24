@@ -1,5 +1,5 @@
-import { IMovement } from '@modules/entities/Movement/IMovement';
-import { IAccount } from '@modules/entities/Account/IAccount';
+import { IMovement } from '@entities/Movement/IMovement';
+import { IAccount } from '@entities/Account/IAccount';
 import {
   Column,
   CreateDateColumn,

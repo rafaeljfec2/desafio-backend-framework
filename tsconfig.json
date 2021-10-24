@@ -10,11 +10,14 @@
     "rootDir": "src",
     "baseUrl": "./",
     "paths": {
-      "@config/*": [
-        "src/config/*"
+      "@entities/*": [
+        "src/entities/*"
       ],
-      "@modules/*": [
-        "src/*"
+      "@infraestructure/*": [
+        "src/infraestructure/*"
+      ],
+      "@usecases/*": [
+        "src/usecases/*"
       ],
       "@shared/*": [
         "src/shared/*"

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { CreateUserUseCase } from '@modules/usecases/CreateUser/CreateUserUseCase';
-import { UserType } from '@modules/shared/enum/UserType';
+import { CreateUserUseCase } from '@usecases/CreateUser/CreateUserUseCase';
+import { UserType } from '@shared/enum/UserType';
 
 export class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) {}

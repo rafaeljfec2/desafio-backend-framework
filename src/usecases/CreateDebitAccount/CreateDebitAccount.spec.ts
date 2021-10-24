@@ -1,7 +1,7 @@
-import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
-import Crypt from '@modules/infraestructure/auth/Crypt';
-import MemoryAccountRepository from '@modules/infraestructure/repositories/orm/memory/MemoryAccountRepository';
-import MemoryMovementRepository from '@modules/infraestructure/repositories/orm/memory/MemoryMovementRepository';
+import { ICreateMovementDTO } from '@entities/Movement/ICreateMovementDTO';
+import Crypt from '@infraestructure/auth/Crypt';
+import MemoryAccountRepository from '@infraestructure/repositories/orm/memory/MemoryAccountRepository';
+import MemoryMovementRepository from '@infraestructure/repositories/orm/memory/MemoryMovementRepository';
 import 'reflect-metadata';
 import { BalanceAccountUseCase } from '../BalanceAccount/BalanceAccountUseCase';
 import CreateCreditAccountUseCase from '../CreateCreditAccount/CreateCreditAccountUseCase';

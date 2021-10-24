@@ -1,5 +1,5 @@
-import Crypt from '@modules/infraestructure/auth/Crypt';
-import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
+import Crypt from '@infraestructure/auth/Crypt';
+import PostgresAccountRepository from '@infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
 import LoginValidateUseCase from '../LoginValidate/LoginValidateUseCase';
 import LoginUseCase from './LoginUseCase';
 import LoginUseCaseController from './LoginUseCaseController';

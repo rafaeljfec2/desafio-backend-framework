@@ -1,7 +1,7 @@
-import { IAccount } from '@modules/entities/Account/IAccount';
-import Crypt from '@modules/infraestructure/auth/Crypt';
-import MemoryAccountRepository from '@modules/infraestructure/repositories/orm/memory/MemoryAccountRepository';
-import { UserType } from '@modules/shared/enum/UserType';
+import { IAccount } from '@entities/Account/IAccount';
+import Crypt from '@infraestructure/auth/Crypt';
+import MemoryAccountRepository from '@infraestructure/repositories/orm/memory/MemoryAccountRepository';
+import { UserType } from '@shared/enum/UserType';
 import 'reflect-metadata';
 import { CreateUserUseCase } from '../CreateUser/CreateUserUseCase';
 import LoginValidateUseCase from '../LoginValidate/LoginValidateUseCase';

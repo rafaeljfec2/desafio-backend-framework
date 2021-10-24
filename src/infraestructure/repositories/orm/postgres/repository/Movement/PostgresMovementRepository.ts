@@ -1,7 +1,8 @@
-import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
-import { IMovement } from '@modules/entities/Movement/IMovement';
+import { ICreateMovementDTO } from '@entities/Movement/ICreateMovementDTO';
+import { IMovement } from '@entities/Movement/IMovement';
+import { IMovementRepository } from '@entities/Movement/IMovementRepository';
 import { getRepository, Repository } from 'typeorm';
-import { IMovementRepository } from '../../../../../../entities/Movement/IMovementRepository';
+
 import Movement from '../../entities/Movement/Movement';
 
 export default class PostgresMovementRepository implements IMovementRepository {

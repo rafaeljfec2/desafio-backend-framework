@@ -1,5 +1,5 @@
-import PostgresMovementRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Movement/PostgresMovementRepository';
-import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
+import PostgresMovementRepository from '@infraestructure/repositories/orm/postgres/repository/Movement/PostgresMovementRepository';
+import PostgresAccountRepository from '@infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
 import { BalanceAccountController } from './BalanceAccountController';
 import { BalanceAccountUseCase } from './BalanceAccountUseCase';
 

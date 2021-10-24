@@ -1,7 +1,7 @@
-import { authToken } from '@modules/usecases/AuthToken';
-import { balanceAccountController } from '@modules/usecases/BalanceAccount';
-import { createCreditAccounController } from '@modules/usecases/CreateCreditAccount';
-import { createTransferAccountController } from '@modules/usecases/CreateTransferAccount';
+import { authToken } from '@usecases/AuthToken';
+import { balanceAccountController } from '@usecases/BalanceAccount';
+import { createCreditAccounController } from '@usecases/CreateCreditAccount';
+import { createTransferAccountController } from '@usecases/CreateTransferAccount';
 import { celebrate, Segments } from 'celebrate';
 import { request, response, Router } from 'express';
 import Joi from 'joi';

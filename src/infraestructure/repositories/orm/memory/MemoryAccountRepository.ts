@@ -1,6 +1,6 @@
-import { IAccount } from '@modules/entities/Account/IAccount';
-import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
-import { ICreateAccountDTO } from '@modules/entities/Account/ICreateAccountDTO';
+import { IAccount } from '@entities/Account/IAccount';
+import { IAccountRepository } from '@entities/Account/IAccountRepository';
+import { ICreateAccountDTO } from '@entities/Account/ICreateAccountDTO';
 import { randomInt } from 'crypto';
 
 export default class MemoryAccountRepository implements IAccountRepository {

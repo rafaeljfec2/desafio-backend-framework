@@ -1,4 +1,4 @@
-import { IMovement } from '@modules/entities/Movement/IMovement';
+import { IMovement } from '@entities/Movement/IMovement';
 import { ICreateMovementDTO } from './ICreateMovementDTO';
 
 export interface IMovementRepository {

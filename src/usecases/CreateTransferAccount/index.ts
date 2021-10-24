@@ -1,5 +1,5 @@
-import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
-import PostgresMovementRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Movement/PostgresMovementRepository';
+import PostgresAccountRepository from '@infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
+import PostgresMovementRepository from '@infraestructure/repositories/orm/postgres/repository/Movement/PostgresMovementRepository';
 import { BalanceAccountUseCase } from '../BalanceAccount/BalanceAccountUseCase';
 import CreateCreditAccountUseCase from '../CreateCreditAccount/CreateCreditAccountUseCase';
 import CreateDebitAccountUseCase from '../CreateDebitAccount/CreateDebitAccountUseCase';

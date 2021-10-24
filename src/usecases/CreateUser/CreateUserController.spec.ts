@@ -1,4 +1,4 @@
-import app from '@modules/shared/infra/http/app';
+import app from '@shared/infra/http/app';
 import request from 'supertest';
 
 describe('Integration Test', () => {

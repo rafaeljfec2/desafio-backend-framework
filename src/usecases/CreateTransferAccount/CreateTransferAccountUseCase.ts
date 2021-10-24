@@ -1,11 +1,11 @@
-import PostgresAccountRepository from '@modules/infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
-import { ICreateMovementDTO } from '@modules/entities/Movement/ICreateMovementDTO';
-import AppError from '@modules/shared/errors/AppError';
+import PostgresAccountRepository from '@infraestructure/repositories/orm/postgres/repository/Account/PostgresAccountRepository';
+import { ICreateMovementDTO } from '@entities/Movement/ICreateMovementDTO';
+import AppError from '@shared/errors/AppError';
 import { BalanceAccountUseCase } from '../BalanceAccount/BalanceAccountUseCase';
 import CreateCreditAccountUseCase from '../CreateCreditAccount/CreateCreditAccountUseCase';
 import CreateDebitAccountUseCase from '../CreateDebitAccount/CreateDebitAccountUseCase';
 import { ICreateTranferDTO } from './ICreateTranferDTO';
-import { UserType } from '@modules/shared/enum/UserType';
+import { UserType } from '@shared/enum/UserType';
 import Https from 'https';
 
 export class CreateTransferAccountUseCase {

@@ -1,4 +1,4 @@
-import { createUserController } from '@modules/usecases/CreateUser';
+import { createUserController } from '@usecases/CreateUser';
 import { celebrate, Segments } from 'celebrate';
 import { request, response, Router } from 'express';
 import Joi from 'joi';

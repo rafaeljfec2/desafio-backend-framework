@@ -1,6 +1,6 @@
-import { IAccountRepository } from '@modules/entities/Account/IAccountRepository';
-import { IMovementRepository } from '@modules/entities/Movement/IMovementRepository';
-import AppError from '@modules/shared/errors/AppError';
+import { IAccountRepository } from '@entities/Account/IAccountRepository';
+import { IMovementRepository } from '@entities/Movement/IMovementRepository';
+import AppError from '@shared/errors/AppError';
 
 export class BalanceAccountUseCase {
   constructor(

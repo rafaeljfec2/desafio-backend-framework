@@ -1,4 +1,4 @@
-import { IAccount } from '@modules/entities/Account/IAccount';
+import { IAccount } from '@entities/Account/IAccount';
 import { ICreateAccountDTO } from './ICreateAccountDTO';
 
 export interface IAccountRepository {
