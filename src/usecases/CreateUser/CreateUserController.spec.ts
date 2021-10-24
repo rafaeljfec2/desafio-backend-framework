@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '@shared/infra/http/app';
+import app from '@infraestructure/http/app';
 
 describe('Integration Test', () => {
   describe('', () => {

@@ -11,7 +11,7 @@ import cors from 'cors';
 import { errors } from 'celebrate';
 import AppError from '@shared/errors/AppError';
 import '@shared/infra/typeorm';
-import routes from './routes';
+import routes from '@infraestructure/http/routes/app';
 import morgan from 'morgan-body';
 import logger from '@infraestructure/middlewares/logger';
 import { createNamespace, Namespace } from 'continuation-local-storage';
