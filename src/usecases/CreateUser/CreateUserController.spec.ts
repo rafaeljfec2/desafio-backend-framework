@@ -14,7 +14,6 @@ describe('Integration Test', () => {
             tyep: 'USER',
           },
         });
-      console.log(response.body);
       expect(response.status).toBe(201);
     });
   });
