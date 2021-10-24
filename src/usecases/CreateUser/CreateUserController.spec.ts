@@ -1,24 +1,19 @@
-import app from '../../shared/infra/http/server';
+import app from '@modules/shared/infra/http/app';
 import request from 'supertest';
 
 describe('Integration Test', () => {
-  beforeEach(() => {
-    jest.useFakeTimers();
-  });
-
-  jest.setTimeout(6000000);
   it('Create User', async () => {
     const response = await request(app)
       .post('/api/v1/users')
       .send({
         user: {
-          name: 'Rafael do Login',
-          document: '10',
-          email: '10@gmail.com',
+          name: 'rafael',
+          email: 'rafael@gmail.com',
           password: '123',
+          tyep: 'USER',
         },
       });
-
+    console.log(response.body);
     expect(response.status).toBe(201);
   });
 });
