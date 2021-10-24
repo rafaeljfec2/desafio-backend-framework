@@ -33,9 +33,9 @@
     "noImplicitAny": true,
     "strictPropertyInitialization": false,
     "skipLibCheck": true
-    },
-    "include": [
-      "./src/**/*",
-      ".vscode/@types"
-    ],
+  },
+  "include": [
+    "./src/**/*",
+    ".vscode/@types"
+  ]
 }
