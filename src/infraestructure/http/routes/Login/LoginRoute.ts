@@ -1,3 +1,4 @@
+import logger from '@infraestructure/middlewares/logger';
 import { loginUseCaseController } from '@usecases/Login';
 import { celebrate, Segments } from 'celebrate';
 import { request, response, Router } from 'express';
@@ -25,6 +26,7 @@ loginRoute.post(
     },
   }),
   (request, response) => {
+    logger.info(`Request recebida`);
     return loginUseCaseController.handle(request, response);
   },
 );
