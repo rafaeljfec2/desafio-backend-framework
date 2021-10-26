@@ -27,12 +27,14 @@ export default class PostgresMovementRepository implements IMovementRepository {
   }
 
   public async balance(document: string): Promise<number> {
-    const { sum } = await getRepository(Movement)
-      .createQueryBuilder('movement')
-      .select('SUM(movement.value)', 'sum')
-      .innerJoin('movement.account', 'account')
-      .where('account.document = :document', { document: String(document) })
-      .getRawOne();
+    const sum = Number(
+      await getRepository(Movement)
+        .createQueryBuilder('movement')
+        .select('SUM(movement.value)', 'sum')
+        .innerJoin('movement.account', 'account')
+        .where('account.document = :document', { document: String(document) })
+        .getRawOne(),
+    );
 
     return sum;
   }
